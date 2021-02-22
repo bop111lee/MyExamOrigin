@@ -159,6 +159,15 @@
             <version>2.0.4</version>
         </dependency>
 
+        <!--excel 操作类-->
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+        <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6.12</version>
+        </dependency>
+
+
     </dependencies>
 
 
