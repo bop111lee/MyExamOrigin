@@ -67,14 +67,20 @@ public class SecurityConfigurer {
                     .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint)
                     .and().authenticationProvider(restAuthenticationProvider)
                     .authorizeRequests()
+                    //antMatchers放行请求，请求可以不用通过认证
                     .antMatchers(securityIgnoreUrls.toArray(ignores)).permitAll()
+                    //antMatchers().hasAnyAuthority()拥有权限则可以放行
+                    //hasRole()基于角色的放行
                     .antMatchers("/api/admin/**").hasRole(RoleEnum.ADMIN.getName())
                     .antMatchers("/api/student/**").hasRole(RoleEnum.STUDENT.getName())
                     .antMatchers("/doc.html").permitAll()
                     .antMatchers("/swagger-resources/**").permitAll()
                     .antMatchers("/v2/**").permitAll()
+                    //regexMatchers()正则表达式匹配
+                    //anyRequest().authenticated()任何请求都需要通过认证
                     .anyRequest().permitAll()
                     .and().exceptionHandling().accessDeniedHandler(restAccessDeniedHandler)
+                    //successHandler()登录成功后的跳转页面,failureHandler()同理
                     .and().formLogin().successHandler(restAuthenticationSuccessHandler).failureHandler(restAuthenticationFailureHandler)
                     .and().logout().logoutUrl("/api/user/logout").logoutSuccessHandler(restLogoutSuccessHandler).invalidateHttpSession(true)
                     .and().rememberMe().key(CookieConfig.getName()).tokenValiditySeconds(CookieConfig.getInterval()).userDetailsService(formDetailsService)
