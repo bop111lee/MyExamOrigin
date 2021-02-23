@@ -6,11 +6,15 @@ import com.mindskip.xzs.domain.enums.RoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -26,6 +30,11 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfigurer {
+
+    //@Secured()
+    //注解判断方法或接口是否满足角色权限
+    //@PreAuthorize方法前判断角色权限
+    //@PostAuthorize方法后判断角色权限
 
     @Configuration
     public static class FormLoginWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
@@ -82,8 +91,11 @@ public class SecurityConfigurer {
                     .and().exceptionHandling().accessDeniedHandler(restAccessDeniedHandler)
                     //successHandler()登录成功后的跳转页面,failureHandler()同理
                     .and().formLogin().successHandler(restAuthenticationSuccessHandler).failureHandler(restAuthenticationFailureHandler)
+                    //logoutUrl退出成功后的跳转
                     .and().logout().logoutUrl("/api/user/logout").logoutSuccessHandler(restLogoutSuccessHandler).invalidateHttpSession(true)
+                    //remeberMe()记住我操作
                     .and().rememberMe().key(CookieConfig.getName()).tokenValiditySeconds(CookieConfig.getInterval()).userDetailsService(formDetailsService)
+                    //关闭csrf维护，csrf跨站请求伪造
                     .and().csrf().disable()
                     .cors();
         }
