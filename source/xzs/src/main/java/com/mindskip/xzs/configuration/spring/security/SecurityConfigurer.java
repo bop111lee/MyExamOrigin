@@ -114,7 +114,6 @@ public class SecurityConfigurer {
             return source;
         }
 
-
         @Bean
         public RestLoginAuthenticationFilter authenticationFilter() throws Exception {
             RestLoginAuthenticationFilter authenticationFilter = new RestLoginAuthenticationFilter();

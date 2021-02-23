@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 账号验证异常
- * @author 武汉思维跳跃科技有限公司
+ * 用户名密码验证错误会跳到这里
  */
 @Component
 public class RestAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {

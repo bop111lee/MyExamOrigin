@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 未登录
- * @author 武汉思维跳跃科技有限公司
+ * 用户未登录会跳到这里，返回JSON格式做未登录处理
  */
 @Component
 public final class LoginAuthenticationEntryPoint extends LoginUrlAuthenticationEntryPoint {

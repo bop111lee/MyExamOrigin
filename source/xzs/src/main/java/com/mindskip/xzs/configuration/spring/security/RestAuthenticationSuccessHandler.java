@@ -18,9 +18,7 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * 登录成功返回
- *
- * @author 武汉思维跳跃科技有限公司
+ * 用户登录成功会跳到这里，返回正确登录消息
  */
 @Component
 public class RestAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {

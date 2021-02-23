@@ -18,8 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 登录参数序列化
- * @author 武汉思维跳跃科技有限公司
+ * 获取登录传过来的参数，反序列传过来的json格式
  */
 
 public class RestLoginAuthenticationFilter extends AbstractAuthenticationProcessingFilter {

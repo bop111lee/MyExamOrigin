@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
- * 用户登出
- *
- * @author 武汉思维跳跃科技有限公司
+ * 用户退出接口
  */
 @Component
 public class RestLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {

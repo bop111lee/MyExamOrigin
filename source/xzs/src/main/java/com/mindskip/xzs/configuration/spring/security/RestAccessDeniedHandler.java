@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 自定义缺乏权限设置
+ *  没有权限会跳到这里，返回自定义处理码的JSON格式
  */
 @Component
 public class RestAccessDeniedHandler implements AccessDeniedHandler {
