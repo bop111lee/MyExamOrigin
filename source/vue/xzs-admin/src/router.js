@@ -210,8 +210,24 @@ const constantRoutes = [
         meta: { title: '消息发送', noCache: true }
       }
     ]
-  },
-  {
+  },{
+    path: '/file',
+    component: Layout,
+    name: 'FilePage',
+    meta: {
+      title: '文件中心',
+      icon: 'zip'
+    },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/file/list'),
+        name: 'FileListPage',
+        meta: { title: '文件列表', noCache: true }
+      }
+    ]
+  }, {
     path: '/log',
     component: Layout,
     name: 'LogPage',
