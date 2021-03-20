@@ -14,17 +14,19 @@
       </el-form-item>
     </el-form>
     <el-table>
-      <el-table-column prop="id" label="Id"  width="100" />
+      <el-table-column prop="id" label="Id" width="100"/>
       <el-table-column prop="title" label="标题" show-overflow-tooltip/>
-      <el-table-column prop="content" label="内容" show-overflow-tooltip />
+      <el-table-column prop="" label="操作" show-overflow-tooltip>
+        <el-button size="mini" class="link-left"></el-button>
+      </el-table-column>
     </el-table>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'list'
-}
+  export default {
+    name: 'list'
+  }
 </script>
 
 <style scoped>
