@@ -1,9 +1,6 @@
 package com.mindskip.xzs.configuration.property;
 
 
-import java.time.Duration;
-import java.util.List;
-
 public class QnConfig {
 
     private String url;

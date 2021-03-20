@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>xzs</name>
-    <description>学之思考试系统 -  武汉思维跳跃科技有限公司</description>
+    <description>学之思考试系统 - 武汉思维跳跃科技有限公司</description>
 
 
     <properties>
@@ -21,7 +21,6 @@
         <mysql.version>8.0.17</mysql.version>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
     </properties>
-
 
 
     <parent>
@@ -92,7 +91,6 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.2.12</version>
         </dependency>
-
 
         <dependency>
             <groupId>mysql</groupId>
@@ -167,9 +165,26 @@
             <version>2.6.12</version>
         </dependency>
 
+        <!--httpClient实现-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.12</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.12</version>
+        </dependency>
+
 
     </dependencies>
-
 
 
     <build>
